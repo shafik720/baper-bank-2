@@ -15,6 +15,10 @@
         body{
             font-family: 'Nunito', sans-serif ;
         }
+        .error-message{
+            color: red;
+            display: none;
+        }
 
     </style>
 </head>
@@ -27,13 +31,14 @@
                     <div class="">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label fw-bold fs-4">Name :</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Write: Rafayel">
+                            <input id="name" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Rafayel">
+                            <p id="nameError" class="error-message pt-3 fw-bold">Message here</p>
                           </div>
                           <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label fw-bold fs-4">Email address :</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Write: email@gmail.com">
+                            <input id="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@gmail.com">
                           </div>
-                          <button type="button" class="btn btn-warning">Submitt</button>
+                          <button id="submittBtn" type="button" class="btn btn-warning">Submitt</button>
                     </div>
                 </div>
             </div>
@@ -45,5 +50,6 @@
 
 
     <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
