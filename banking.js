@@ -18,10 +18,9 @@ function addAmount(inputType,errorField,showField){
     activityPara.classList.add('fw-bold');
     let datePara = document.createElement('p');
     
-
+    // adding current date & time
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
-    today.toLocaleDateString();
     console.log(today);
 
     if(getInputValues.value == ''){
