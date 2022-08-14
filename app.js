@@ -37,3 +37,5 @@ document.getElementById('submittBtn').addEventListener('click',function(){
 
     // names.value= '';
 })
+
+document
