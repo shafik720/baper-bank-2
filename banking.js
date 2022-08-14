@@ -14,8 +14,15 @@ function addAmount(inputType,errorField,showField){
 
     //activity log
     let activity = document.getElementById('activity');
-    let activityPara = document.createElement('li');
+    let activityPara = document.createElement('p');
     activityPara.classList.add('fw-bold');
+    let datePara = document.createElement('p');
+    
+
+    const timeElapsed = Date.now();
+    const today = new Date(timeElapsed);
+    today.toLocaleDateString();
+    console.log(today);
 
     if(getInputValues.value == ''){
         errors.style.display= 'block';
@@ -41,6 +48,10 @@ function addAmount(inputType,errorField,showField){
             activityPara.innerText = 'You have Deposited $'+getInputValue;
             activityPara.style.color = '#0C62E2';
             activity.appendChild(activityPara);
+            datePara.innerText =  today.toLocaleString();
+            datePara.style.color= 'grey';
+            datePara.style.marginTop = '-15px'
+            activity.appendChild(datePara);
 
         }else if(inputType.toLowerCase()=='withdraw'){
             if((balance-getInputValue)<=200){
@@ -62,8 +73,6 @@ function addAmount(inputType,errorField,showField){
             }            
         }
     }
-
-
     // Clearing Input Field
     getInputValues.value = '';
 }
