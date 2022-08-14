@@ -30,9 +30,9 @@ function addAmount(inputType,errorField,showField){
             let totalBalance = balance + getInputValue;
             balances.innerText = totalBalance;
         }else if(inputType.toLowerCase()=='withdraw'){
-            if(getInputValue>balance){
+            if((balance-getInputValue)<=200){
                 errors.style.display= 'block';
-                errors.innerText = 'Withdraw Amount exceeded !';
+                errors.innerText = 'Withdraw Amount exceeded ! You cannot leave your account balance below $200';
             }else{
                 errors.style.display= 'none';
                 let totalBalance = balance - getInputValue;
