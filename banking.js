@@ -48,6 +48,7 @@ function addAmount(inputType,errorField,showField){
             activityPara.innerText = 'You have Deposited $'+getInputValue;
             activityPara.style.color = '#0C62E2';
             activity.appendChild(activityPara);
+
             datePara.innerText =  today.toLocaleString();
             datePara.style.color= 'grey';
             datePara.style.marginTop = '-15px'
@@ -70,6 +71,10 @@ function addAmount(inputType,errorField,showField){
                 activityPara.style.color = 'red';
                 activity.appendChild(activityPara);
             
+                datePara.innerText =  today.toLocaleString();
+                datePara.style.color= 'grey';
+                datePara.style.marginTop = '-15px'
+                activity.appendChild(datePara);
             }            
         }
     }
