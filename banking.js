@@ -29,14 +29,14 @@ function addAmount(inputType,errorField,showField){
         errors.innerText = 'Minus value or Zero is not accepted !';
     }else if(isNaN(getInputValue)!=true){
         errors.style.display= 'none';
-        let depositBalance = depositShow + getInputValue;
-        depositShows.innerText = depositBalance;
+        
 
         if(inputType.toLowerCase()=='deposit'){
-            let totalBalance = balance + getInputValue;
-            balances.innerText = totalBalance;
+            let depositBalance = depositShow + getInputValue;
+            depositShows.innerText = depositBalance;
 
-            
+            let totalBalance = balance + getInputValue;
+            balances.innerText = totalBalance;            
             
             activityPara.innerText = 'You have Deposited $'+getInputValue;
             activityPara.style.color = '#0C62E2';
@@ -47,6 +47,10 @@ function addAmount(inputType,errorField,showField){
                 errors.style.display= 'block';
                 errors.innerText = 'Withdraw Amount exceeded ! You cannot leave your account balance below $200';
             }else{
+                
+                let depositBalance = depositShow + getInputValue;
+                depositShows.innerText = depositBalance;
+
                 errors.style.display= 'none';
                 let totalBalance = balance - getInputValue;
                 balances.innerText = totalBalance;
