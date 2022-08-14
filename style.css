@@ -4,3 +4,36 @@
 body{
     font-family: 'Nunito', sans-serif ;
 }
+
+.depositBox{
+    background: #0D6EFD;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease-in-out ;
+}
+.depositBox:hover{
+    background: white;
+    color: #0D6EFD;
+}
+
+.withdrawBox{
+    background: #DC3545;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+.withdrawBox:hover{
+    background: white;
+    color:#DC3545 ;
+}
+
+.balanceBox{
+    background: teal;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+.balanceBox:hover{
+    background: white;
+    color:teal;
+}
