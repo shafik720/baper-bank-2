@@ -37,3 +37,8 @@ body{
     background: white;
     color:teal;
 }
+
+.error{
+    color: red;
+    display: none;
+}

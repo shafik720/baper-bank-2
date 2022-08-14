@@ -38,16 +38,17 @@
         <div class="row mt-5 gy-4">
             <div class="col-lg-2 col-md-2"></div>
             <div class="col-lg-4 col-md-4">
-                <div class="border border-3 p-4  rounded-3 border-primary">
+                <div class="border border-3 p-4  rounded-3 border-primary h-100">
                     <div class="mb-3 text-center">
                         <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Deposit Amount</label>
-                        <input type="" class="form-control w-50 mx-auto my-4" id="exampleFormControlInput1" >
-                        <button type="button" class="btn btn-primary ">Deposit</button>
+                        <input id="deposit-value" type="" class="form-control w-50 mx-auto my-4" id="exampleFormControlInput1" >
+                        <p id='deposit-error' class="fw-bold error">Error</p>
+                        <button id="depositBtn" type="button" class="btn btn-primary ">Deposit</button>
                       </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
-                <div class="border border-3 p-4  rounded-3 border-danger">
+                <div class="border border-3 p-4  rounded-3 border-danger h-100">
                     <div class="mb-3 text-center">
                         <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Withdraw Amount</label>
                         <input type="" class="form-control w-50 mx-auto my-4" id="exampleFormControlInput1" >
@@ -58,5 +59,10 @@
             <div class="col-lg-2 col-md-2"></div>
         </div>
     </div>
+
+
+
+    <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="banking.js"></script>
 </body>
 </html>
