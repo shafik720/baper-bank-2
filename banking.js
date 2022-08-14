@@ -9,7 +9,13 @@ function addAmount(inputType,errorField,showField){
     let balances = document.getElementById('balance');
     let balance = parseFloat(balances.innerText);
     
+    // error message
     let errors = document.getElementById(errorField+'-error');
+
+    //activity log
+    let activity = document.getElementById('activity');
+    let activityPara = document.createElement('li');
+    activityPara.classList.add('fw-bold');
 
     if(getInputValues.value == ''){
         errors.style.display= 'block';
@@ -29,6 +35,13 @@ function addAmount(inputType,errorField,showField){
         if(inputType.toLowerCase()=='deposit'){
             let totalBalance = balance + getInputValue;
             balances.innerText = totalBalance;
+
+            
+            
+            activityPara.innerText = 'You have Deposited $'+getInputValue;
+            activityPara.style.color = '#0C62E2';
+            activity.appendChild(activityPara);
+
         }else if(inputType.toLowerCase()=='withdraw'){
             if((balance-getInputValue)<=200){
                 errors.style.display= 'block';
@@ -37,6 +50,11 @@ function addAmount(inputType,errorField,showField){
                 errors.style.display= 'none';
                 let totalBalance = balance - getInputValue;
                 balances.innerText = totalBalance;
+
+                activityPara.innerText = 'You have Withdrawed $'+getInputValue;
+                activityPara.style.color = 'red';
+                activity.appendChild(activityPara);
+            
             }            
         }
     }
