@@ -1,7 +1,11 @@
 
-function addAmount(inputType,errorField){
+function addAmount(inputType,errorField,showField){
     let getInputValues = document.getElementById(inputType+'-value');
     let getInputValue = parseFloat(getInputValues.value)
+
+    let depositShows = document.getElementById(showField+'-show');
+    let depositShow = parseFloat(depositShows.innerText)
+    console.log(depositShow);
     
     let errors = document.getElementById(errorField+'-error');
     if(getInputValues.value == ''){
@@ -16,6 +20,9 @@ function addAmount(inputType,errorField){
         errors.innerText = 'Minus value is not accepted !';
     }else if(isNaN(getInputValue)!=true){
         errors.style.display= 'none';
+        let depositBalance = depositShow + getInputValue;
+        depositShows.innerText = depositBalance;
+        console.log(depositBalance);
     }
 
 
@@ -24,5 +31,5 @@ function addAmount(inputType,errorField){
 }
 
 document.getElementById('depositBtn').addEventListener('click',function(){
-    addAmount('deposit', 'deposit');
+    addAmount('deposit', 'deposit', 'deposit');
 })
