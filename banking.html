@@ -24,13 +24,13 @@
             <div class="col-lg-3 col-md-4 mx-auto">
                 <div class="withdrawBox border border-3 rounded border-danger py-3 text-center">
                     <h4>Withdraw</h4>
-                    <h4>$ <span>00</span> </h4>
+                    <h4>$ <span id="withdraw-show">00</span> </h4>
                 </div>
             </div>
             <div class=" col-lg-3 col-md-4 mx-auto">
                 <div class="balanceBox border border-3 rounded border-warning py-3 text-center">
                     <h4>Balance</h4>
-                    <h4>$ <span>1200</span> </h4>
+                    <h4>$ <span id="balance">1200</span> </h4>
                 </div>
             </div>
         </div>
@@ -51,8 +51,9 @@
                 <div class="border border-3 p-4  rounded-3 border-danger h-100">
                     <div class="mb-3 text-center">
                         <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Withdraw Amount</label>
-                        <input type="" class="form-control w-50 mx-auto my-4" id="exampleFormControlInput1" >
-                        <button type="button" class="btn btn-danger ">Withdraw</button>
+                        <input id="withdraw-value" type="" class="form-control w-50 mx-auto my-4" id="exampleFormControlInput1" >
+                        <p id='withdraw-error' class="fw-bold error">Error</p>
+                        <button id="withdrawBtn" type="button" class="btn btn-danger ">Withdraw</button>
                       </div>
                 </div>
             </div>

@@ -4,9 +4,13 @@ function addAmount(inputType,errorField,showField){
     let getInputValue = parseFloat(getInputValues.value)
 
     let depositShows = document.getElementById(showField+'-show');
-    let depositShow = parseFloat(depositShows.innerText)
+    let depositShow = parseFloat(depositShows.innerText);
+
+    let balances = document.getElementById('balance');
+    let balance = parseFloat(balances.innerText);
     
     let errors = document.getElementById(errorField+'-error');
+    
     if(getInputValues.value == ''){
         errors.style.display= 'block';
         errors.innerText = 'Empty input is not accepted !';
@@ -21,6 +25,14 @@ function addAmount(inputType,errorField,showField){
         errors.style.display= 'none';
         let depositBalance = depositShow + getInputValue;
         depositShows.innerText = depositBalance;
+
+        if(inputType.toLowerCase()=='deposit'){
+            let totalBalance = balance + getInputValue;
+            balances.innerText = totalBalance;
+        }else if(inputType.toLowerCase()=='withdraw'){
+            let totalBalance = balance - getInputValue;
+            balances.innerText = totalBalance;
+        }
     }
 
 
@@ -30,4 +42,8 @@ function addAmount(inputType,errorField,showField){
 
 document.getElementById('depositBtn').addEventListener('click',function(){
     addAmount('deposit', 'deposit', 'deposit');
+})
+
+document.getElementById('withdrawBtn').addEventListener('click',function(){
+    addAmount('withdraw','withdraw','withdraw');
 })
