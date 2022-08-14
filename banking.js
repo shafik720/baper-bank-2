@@ -10,7 +10,7 @@ function addAmount(inputType,errorField,showField){
     let balance = parseFloat(balances.innerText);
     
     let errors = document.getElementById(errorField+'-error');
-    
+
     if(getInputValues.value == ''){
         errors.style.display= 'block';
         errors.innerText = 'Empty input is not accepted !';
@@ -30,8 +30,14 @@ function addAmount(inputType,errorField,showField){
             let totalBalance = balance + getInputValue;
             balances.innerText = totalBalance;
         }else if(inputType.toLowerCase()=='withdraw'){
-            let totalBalance = balance - getInputValue;
-            balances.innerText = totalBalance;
+            if(getInputValue>balance){
+                errors.style.display= 'block';
+                errors.innerText = 'Withdraw Amount exceeded !';
+            }else{
+                errors.style.display= 'none';
+                let totalBalance = balance - getInputValue;
+                balances.innerText = totalBalance;
+            }            
         }
     }
 
